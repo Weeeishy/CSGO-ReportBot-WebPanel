@@ -1,0 +1,49 @@
+<?php
+
+/* DATABASE INFORMATION */
+
+$DB_HOSTNAME = "localhost";
+$DB_USER = "report_bot";
+$DB_PASSWORD = "";
+$DB_DATABASE = "report_bot";
+
+
+/* DO NOT EDIT SETTINGS DOWN BELOW */
+/* DO NOT TOUCH ANYTHING PLEASE THANKS */
+
+$pdo = new PDO("mysql:dbname=$DB_DATABASE;host=$DB_HOSTNAME;charset=UTF8", "$DB_USER", "$DB_PASSWORD");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+
+$req = $pdo->query("SELECT * FROM config");
+while($row = $req->fetch()){
+	$version = $row->current_version;
+	$licence_key = $row->licence_key; 
+	$steam_api_key = $row->steam_api_key;
+
+
+	$website_navtitle = $row->website_navtitle;
+	$website_title = $row->website_title;
+
+	/* CAPTCHA INFORMATION */
+
+	$secret_key = $row->captcha_secret_key;
+	$website_key = $row->captcha_website_key;
+
+	/* REPORTBOT INFORMATION */
+
+	$reportbot_number = $row->reportbot_number;
+	$commendbot_number = $row->commendbot_number; 
+
+	$log_prefix = $row->log_prefix; 
+
+	$report_path = $row->report_path;
+	$report_log_path = $row->report_log_path;
+
+	$commend_path = $row->commend_path;
+	$commend_log_path = $row->commend_log_path;
+
+	$commend_timer = $row->commend_timer;
+	$report_timer = $row->report_timer; 	
+}
+
