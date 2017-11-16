@@ -1,0 +1,17 @@
+--- HOW TO ADD A LANGUAGE --
+
+Create a new file called whateveryouwant.php
+
+For example, de.php for a german language file
+
+Copy the whole content from en.php
+
+Change $lang['en'] to $lang['de'] if the file is called de.php, $lang['ru'] if the file is called ru.php ...
+
+You will have this, for example:
+'error_steamid_whitelisted' => "This SteamID is whitelisted."
+
+DO not touch this part: 'error_steamid_whitelisted'
+You only need to change this: "This SteamID is whitelisted."
+
+When you're done, go here /admin/language.php and add your language!
