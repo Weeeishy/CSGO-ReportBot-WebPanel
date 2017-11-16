@@ -1,0 +1,1 @@
+ALTER TABLE `products` ADD `product_order` INT NULL AFTER `id`;

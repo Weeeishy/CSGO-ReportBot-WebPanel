@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `email` VARCHAR(255) NULL AFTER `steamid`, ADD `email_subscribed` BOOLEAN NOT NULL AFTER `email`;

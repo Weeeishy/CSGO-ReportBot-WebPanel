@@ -1,0 +1,1 @@
+UPDATE  `config` SET  `current_version` =  '1.4.2';
